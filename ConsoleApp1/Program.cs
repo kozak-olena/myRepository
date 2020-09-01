@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -10,7 +11,16 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hello world");
+            string rootPath = @"D:\file";
+            string [] dirs = Directory.GetDirectories(rootPath);
+            foreach (string dir in dirs)
+            {
+                Console.WriteLine(dir);
+            }
+
+
+
+            Console.ReadKey();
         }
     }
 }
