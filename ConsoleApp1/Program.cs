@@ -18,6 +18,21 @@ namespace ConsoleApp1
                 Console.WriteLine(dir);
             }
 
+            var docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            var dirName = $@"{docPath}\test";
+
+            DirectoryInfo di = Directory.CreateDirectory(dirName);
+            Console.WriteLine($"Full name: {di.FullName}, Name: {di.Name}, Parent: {di.Parent}");
+
+            if (Directory.Exists(dirName))
+            {
+                Console.WriteLine("Directory exists");
+            }
+            else
+            {
+                Console.WriteLine("Directory does not exist");
+            }
 
 
             Console.ReadKey();
